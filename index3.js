@@ -20,26 +20,6 @@ const client = new Discord.Client({
 const prefix = "!";
 client.commands = new Discord.Collection();
 
-// const commands = fs.readdirSync("./commands").filter(file => file.endsWith(".js"))
-
-// for( file of commands){
-//     const commandName = file.split('.')[0]
-//     const command = require(`./commands/${commandName}`)
-//     client.commands.set(commandName, command)
-// }
-
-
-// client.on('messageCreate', message =>{
-//     if(!message.content.startsWith(prefix) || message.author.bot)return;
-//     const args = message.content.slice(prefix.length).trim().split(/ +/);
-//     const commandName = args.shift().toLowerCase();
-//     const command =  client.commands.get(commandName)
-//     if(!command)return;
-    
-//     command.run(client,message, args);
-// })
-
-
 
 const eventsPath = path.join(__dirname, 'events');
 const eventFiles = fs.readdirSync(eventsPath).filter(file => file.endsWith('.js'));
