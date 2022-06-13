@@ -1,8 +1,9 @@
+const fs= require("fs");
 const Discord = require("discord.js");
 const dotenv = require('dotenv');
 const path = require('node:path');
 dotenv.config();
-const { readdirSync } = require("fs");
+
 const client = new Discord.Client({
     intents:[
         Discord.Intents.FLAGS.GUILDS,
@@ -16,11 +17,11 @@ const client = new Discord.Client({
 });
 
     
-const fs= require("fs");
+
 const prefix = "!";
 client.commands = new Discord.Collection();
 
-const commands = readdirSync("./commands").filter(file => file.endsWith(".js"))
+const commands = fs.readdirSync("./commands").filter(file => file.endsWith(".js"))
 
 for( file of commands){
     const commandName = file.split('.')[0]
