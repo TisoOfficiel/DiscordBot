@@ -24,7 +24,7 @@ const commands = readdirSync("./Commands").filter(file => file.endsWith(".js"))
 
 for( file of commands){
     const commandName = file.split('.')[0]
-    const command = require(`./Commands/${commandName}`)
+    const command = require(`./commands/${commandName}`)
     client.commands.set(commandName, command)
 }
 
