@@ -32,7 +32,7 @@ for( file of commands){
 client.on('messageCreate', message =>{
     if(!message.content.startsWith(prefix) || message.author.bot)return;
     
-	if(message.content==ping){
+	if(message.content=="ping"){
 		message.channel.send("pong!")
 	}
 })
